@@ -2,3 +2,4 @@
 *.sqlite3
 evenv
 *.pyc
+gestao_rh/__pycache__/
