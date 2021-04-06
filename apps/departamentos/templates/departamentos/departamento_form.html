@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% block main %}<br>
+   <h3>Novo Departamento</h3>
+
+<form method="post">
+{% csrf_token %}
+
+    <div>
+        {{ form|bootstrap_horizontal:'col-lg-7' }}
+    </div>
+
+
+
+    <br>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+
+{% endblock%}

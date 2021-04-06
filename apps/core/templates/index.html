@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Index{% endblock %}
+
+{% block main %}<br>
+<div class="row">
+    <div class="col-sm">
+      <h5>Curso UDEMY</h5>
+    </div>
+    <div class="col-sm">
+     Olá {{ usuario.funcionario.nome }}<p>
+        <a href="{% url 'list_funcionarios' %}">Gerenciar Funcionarios</a></p>
+        <a href="{% url 'list_departamentos' %}">Gerenciar Departamentos</a><p></p>
+        <a href="{% url 'list_hora_extra' %}">Gerenciar Banco de Horas</a>
+    </div>
+    <div class="col-sm">
+        <a href="{% url 'logout' %}">Logout</a>  |
+
+        {% if usuario.funcionario.empresa %}
+            <a href="{% url 'edit_empresa' usuario.funcionario.empresa.pk %}">Editar Empresa</a>
+        {% else %}
+            <a href="{% url 'create_empresa' %}">Criar Empresa</a>
+        {% endif %}
+    </div>
+  </div>
+{% endblock %}

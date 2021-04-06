@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% block main %}
+<form method="post" enctype="multipart/form-data">
+
+    {% csrf_token %}
+    {{ form|bootstrap_horizontal:'col-lg-7' }}<br>
+    <button type="submit">Adicionar</button>
+
+</form>
+
+{% endblock %}

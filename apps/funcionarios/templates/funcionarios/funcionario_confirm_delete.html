@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% block main %}
+   <h3>Deletar</h3>
+<hr>
+<form method="post">
+{% csrf_token %}
+
+   <div class="alert alert-danger" role="alert">
+  <h4>Você esta certo que quer deletrar {{ obj }} ?</h4>
+    </div>
+
+    {{ form }}
+
+    <button type="submit" class="btn btn-danger">Confirmar</button>
+</form>
+
+
+{% endblock%}
